@@ -167,7 +167,7 @@ class CameraProcessor {
             2
         )
 
-        val surfaces: List<Surface> = Arrays.asList(surface, imageReader?.surface)
+        val surfaces: List<Surface> = Arrays.asList(surface, imageReader.surface)
 
         val type = SessionConfiguration.SESSION_REGULAR
         val configurations: List<OutputConfiguration> = surfaces.map { OutputConfiguration(it) }
