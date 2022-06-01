@@ -5,10 +5,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,17 +16,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        val imageButton: Button = findViewById(R.id.changeImageButton)
+        var content = ProfileContentFragment()
+        var footer = ProfileFooterFragment()
 
-        imageButton.setOnClickListener {
-            showCustomCamera()
-        }
+        var transaction = supportFragmentManager.beginTransaction();
+
+        transaction.add(R.id.main_container, content);
+        transaction.add(R.id.main_container, footer);
+
+        transaction.commit()
     }
-
-    private fun showCustomCamera() {
-        startActivity(Intent(this, CameraActivity::class.java))
-    }
-
     fun showDefaultCamera() {
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
             takePictureIntent.resolveActivity(this.packageManager)?.also {
