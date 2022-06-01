@@ -21,6 +21,11 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_main"/>
+    <LinearLayout
+            android:id="@+id/main_container"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="678dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"></LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
