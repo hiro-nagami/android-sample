@@ -9,8 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    private val REQUEST_CAMERA_PERMISSION = 1
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,13 +23,6 @@ class MainActivity : AppCompatActivity() {
         transaction.add(R.id.main_container, footer);
 
         transaction.commit()
-    }
-    fun showDefaultCamera() {
-        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
-            takePictureIntent.resolveActivity(this.packageManager)?.also {
-                this.startActivityForResult(takePictureIntent, REQUEST_CAMERA_PERMISSION)
-            }
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
