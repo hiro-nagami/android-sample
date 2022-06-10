@@ -14,15 +14,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        var content = ProfileContentFragment()
-        var footer = ProfileFooterFragment()
+        // var content = ProfileContentFragment()
+//        var footer = ProfileFooterFragment()
 
-        var transaction = supportFragmentManager.beginTransaction();
+//        var transaction = supportFragmentManager.beginTransaction();
 
-        transaction.add(R.id.main_container, content);
-        transaction.add(R.id.main_container, footer);
-
-        transaction.commit()
+        // transaction.add(R.id.main_container, content);
+//        transaction.add(R.id.main_container, footer);
+//
+//        transaction.commit()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
