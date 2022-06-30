@@ -11,9 +11,9 @@
             android:layout_height="118dp"
             android:layout_width="100dp"
             android:layout_marginTop="28dp"
-            android:layout_marginStart="32dp"
             android:scaleType="fitCenter"
             android:contentDescription="@string/todo"
+            android:layout_gravity="center"
             app:srcCompat="@drawable/avatar"
             tools:src="@tools:sample/avatars" />
 
@@ -23,6 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/test_content"
-            tools:text="test text" />
+            android:layout_gravity="center"
+            tools:text="Nmae: Chiro" />
 
 </LinearLayout>
