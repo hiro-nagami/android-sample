@@ -3,17 +3,31 @@
         android:id="@+id/fragment_1"
         android:layout_width="match_parent"
         android:layout_height="50sp"
-        android:background="#bcbcbc"
+        android:background="#ffffff"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
     <Button
-            android:id="@+id/button_1"
-            android:text="@string/save"
+            android:id="@+id/button_add"
+            android:text="@string/add"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:textSize="20sp"
             android:textColor="#666"
-            android:background="#fff" />
+            android:background="#fff"
+            android:textAlignment="center"
+            android:onClick="addProfile"/>
+
+
+    <Button
+            android:id="@+id/button_remove"
+            android:text="@string/remove"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:textSize="20sp"
+            android:textColor="#666"
+            android:background="#fff"
+            android:textAlignment="center"
+            android:onClick="removeProfile"/>
 
 </LinearLayout>

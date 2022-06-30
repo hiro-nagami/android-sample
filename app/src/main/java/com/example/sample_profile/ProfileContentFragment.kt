@@ -1,6 +1,7 @@
 package com.example.sample_profile
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -27,6 +28,8 @@ class ProfileContentFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        Log.d("Fragment (ProfileContentFragment)","Called onCreate")
     }
 
     override fun onCreateView(
@@ -34,26 +37,48 @@ class ProfileContentFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        Log.d("Fragment (ProfileContentFragment)","Called onCreateView")
         return inflater.inflate(R.layout.fragment_profile_content, container, false)
     }
 
-    // companion object {
-    //     /**
-    //      * Use this factory method to create a new instance of
-    //      * this fragment using the provided parameters.
-    //      *
-    //      * @param param1 Parameter 1.
-    //      * @param param2 Parameter 2.
-    //      * @return A new instance of fragment ProfileContent.
-    //      */
-    //     // TODO: Rename and change types and number of parameters
-    //     @JvmStatic
-    //     fun newInstance(param1: String, param2: String) =
-    //         ProfileContentFragment().apply {
-    //             arguments = Bundle().apply {
-    //                 putString(ARG_PARAM1, param1)
-    //                 putString(ARG_PARAM2, param2)
-    //             }
-    //         }
-    // }
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        Log.d("Fragment (ProfileContentFragment)", "Called onActivityCreated")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("Fragment (ProfileContentFragment)","Called onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("Fragment (ProfileContentFragment)","Called onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("Fragment (ProfileContentFragment)","Called onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("Fragment (ProfileContentFragment)","Called onStop")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.d("Fragment (ProfileContentFragment)","Called onDestroyView")
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("Fragment (ProfileContentFragment)","Called onDestroy")
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        Log.d("Fragment (ProfileContentFragment)","Called onDetach")
+    }
 }

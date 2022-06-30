@@ -1,28 +1,66 @@
 package com.example.sample_profile
 
-import android.content.Intent
 import android.os.Bundle
-import android.provider.MediaStore
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    val profileFragment: Fragment by lazy { ProfileContentFragment() }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+        Log.d("Activity Log","Called onCreate")
+    }
 
-        // var content = ProfileContentFragment()
-//        var footer = ProfileFooterFragment()
+    override fun onStart() {
+        super.onStart()
+        Log.d("Activity Log","Called onStart")
+    }
 
-//        var transaction = supportFragmentManager.beginTransaction();
+    override fun onResume() {
+        super.onResume()
+        Log.d("Activity Log","Called onResume")
+    }
 
-        // transaction.add(R.id.main_container, content);
-//        transaction.add(R.id.main_container, footer);
-//
-//        transaction.commit()
+    override fun onPause() {
+        super.onPause()
+        Log.d("Activity Log","Called onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("Activity Log","Called onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("Activity Log","Called onDestroy")
+    }
+
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+        Log.d("Activity Log","Called onDetachedFromWindow")
+    }
+
+    fun addProfile(view: View) {
+        val transaction = supportFragmentManager.beginTransaction()
+
+        transaction.add(R.id.main_container, profileFragment)
+        transaction.commit()
+    }
+
+    fun removeProfile(view: View) {
+        val transaction = supportFragmentManager.beginTransaction()
+
+        transaction.remove(profileFragment)
+        transaction.commit()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
